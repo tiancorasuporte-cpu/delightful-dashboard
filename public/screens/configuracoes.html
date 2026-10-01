@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#513d1d", "surface-container-lowest": "#0a0e16", "background": "#0f131c", "tertiary-fixed-dim": "#3de273", "surface-dim": "#0f131c", "primary-container": "#c5a880", "on-secondary-fixed": "#111c2d", "tertiary-container": "#00c75c", "on-error-container": "#ffdad6", "surface-variant": "#31353e", "surface-bright": "#353942", "on-primary-fixed": "#281800", "on-background": "#dfe2ee", "primary": "#e2c399", "inverse-primary": "#725b38", "primary-fixed": "#fedeb2", "on-surface": "#dfe2ee", "inverse-on-surface": "#2c3039", "secondary-container": "#3e495d", "on-tertiary-fixed": "#002109", "surface-tint": "#e0c298", "tertiary-fixed": "#66ff8e", "on-secondary-fixed-variant": "#3c475a", "on-error": "#690005", "surface-container-high": "#262a33", "tertiary": "#3fe474", "primary-fixed-dim": "#e0c298", "on-tertiary": "#003915", "on-secondary-container": "#aeb9d0", "on-tertiary-container": "#004c1e", "error-container": "#93000a", "secondary-fixed-dim": "#bcc7de", "on-primary": "#402d0f", "inverse-surface": "#dfe2ee", "surface-container": "#1c2028", "surface-container-low": "#181c24", "on-secondary": "#263143", "surface": "#0f131c", "surface-container-highest": "#31353e", "outline": "#998f83", "on-tertiary-fixed-variant": "#005322", "secondary": "#bcc7de", "error": "#ffb4ab", "secondary-fixed": "#d8e3fb", "on-primary-fixed-variant": "#584323", "outline-variant": "#4d463c", "on-surface-variant": "#d1c5b8" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "margin": "2rem", "space-xs": "0.25rem", "gutter": "1.25rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-lg": [ "JetBrains Mono" ], "headline-xl-mobile": [ "Hanken Grotesk" ], "body-lg": [ "Hanken Grotesk" ], "headline-lg": [ "Hanken Grotesk" ], "label-sm": [ "JetBrains Mono" ], "label-md": [ "JetBrains Mono" ], "headline-lg-mobile": [ "Hanken Grotesk" ], "body-sm": [ "Hanken Grotesk" ], "body-md": [ "Hanken Grotesk" ], "headline-md": [ "Hanken Grotesk" ], "headline-xl": [ "Hanken Grotesk" ] }, "fontSize": { "label-lg": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "400" } ], "label-md": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between pt-6 pb-6"><div class="flex flex-col gap-6"><div class="px-6 flex items-center gap-3"><img alt="LexCobranca Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6SMWnN1WGzj3IinIx-D5FwUzz4IIlpH84_xci2XtdEkV-NPPxVaasTXGl28ylcEzRMaH8lbJ39yq_hRz-RLcKwtgZzdd5ne8lPOuC8zzQbSoCpfWUzsJmXpQiy_9ViJF1MyvBjNe36e0LMouCPsaSGmMVAO5K5uTqG7V8Gp6SEX0qYepAx2LwWQul0B54iBDhzHiH155PK0DBF-RwsorN9efctKaRxU5WXKa44DBTVaMTTThJ7oK7"/><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-tight text-primary font-semibold">LexCobranca</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Gestão Jurídica</span></div></div><div class="px-6"><div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wider">WAHA Conectado</span></div></div><nav class="flex flex-col gap-1 px-3" data-active-classes="bg-surface-container-high text-primary font-semibold"><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="painel-de-cobrancas" href="/" target="_top"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-body-md text-body-md">Painel de Cobranças</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="gestao-de-usuarios" href="/usuarios" target="_top"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Gestão de Usuários</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="configuracoes" href="/configuracoes" target="_top"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Configurações</span></a></nav></div><div class="px-4 flex flex-col gap-3"><div class="p-3 rounded-lg bg-surface-container-lowest flex flex-col gap-1.5"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Instância Waha</span><span class="font-label-sm text-label-sm text-tertiary font-medium">Online</span></div><span class="font-label-sm text-label-sm text-on-surface-variant font-mono truncate">v2024.10 // Jurídico-SP</span></div><div class="flex items-center justify-between pt-2 px-2 text-on-surface-variant"><span class="font-label-sm text-label-sm text-outline">LexCobranca v2.4</span><span class="font-label-sm text-label-sm text-outline font-mono">PROD</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex-1 max-w-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-full bg-surface-container-low pl-10 pr-4 py-2 rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container transition-colors" placeholder="Buscar clientes, processos judiciais ou faturas..." type="text"/></div></div><div class="flex items-center gap-4"><button class="p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')" title="Alternar Tema Escuro / Claro" type="button"><span class="material-symbols-outlined text-[20px] dark:hidden">dark_mode</span><span class="material-symbols-outlined text-[20px] hidden dark:inline">light_mode</span></button><button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-md text-body-md font-semibold hover:bg-primary transition-all shadow-[0_0_16px_rgba(197,168,128,0.25)]" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nova Cobrança</span></button><div class="h-6 w-px bg-surface-variant mx-1"></div><div class="flex items-center gap-3 pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATnhNLV7X2YxPCteBPI4k5o7EoEKG72mKza2s9uGWBjBP5HPWoqD1tLO1yXZxT2Y2k3M04kfNJuTUgSpkgVhKF8B5IoiA_8RU_HhLTgmE9W8zrY7B7NycCSrz_21D_yInP2BRbfbtIT2Wt_HEwNib3nxzqzB_6HYL0c5LjfL1AjaLAPWEF84ZEHxUs3t6P3J7aR6b7T5jQ4H8_cMk1C2_YjbGsXRXruztn5hWd-kofh4Rj6-z0WvLT"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Dr. Rodrigo Menezes</span><span class="font-label-sm text-label-sm text-outline leading-tight">Advogado Sócio</span></div></div></div></header><main class="relative pt-16 w-full px-margin"><div class="flex flex-col w-full pb-16">
+<!-- Top Breadcrumb & Status Ribbon -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 py-6">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Sistema</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Automação &amp; Mensageria</span>
+</div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface">Configurações &amp; Motor Waha</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm flex items-center gap-1.5 shadow-sm">
+<span class="h-1.5 w-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          Cluster SP-01 Operacional
+        </span>
+</div>
+</div>
+<!-- Global Quick Actions -->
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-low text-secondary hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-2 font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+        Restaurar Padrões
+      </button>
+<button class="px-5 py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-md text-body-md font-semibold hover:bg-primary transition-all shadow-[0_0_18px_rgba(197,168,128,0.22)] flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+        Salvar Alterações
+      </button>
+</div>
+</div>
+<!-- Secondary Navigation Tabs -->
+<div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-xl mb-6 shadow-sm overflow-x-auto">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-high text-primary font-body-md text-body-md font-medium shadow-sm flex items-center gap-2 whitespace-nowrap transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+      Integração WAHA (WhatsApp API)
+      <span class="h-2 w-2 rounded-full bg-tertiary"></span>
+</button>
+<a class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md text-body-md transition-all flex items-center gap-2 whitespace-nowrap" href="#regua-secao">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+      Régua de Vencimentos &amp; Notificações
+    </a>
+<a class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md text-body-md transition-all flex items-center gap-2 whitespace-nowrap" href="#templates-secao">
+<span class="material-symbols-outlined text-[18px]">chat_paste_go</span>
+      Modelos de Mensagens (Templates)
+    </a>
+<button class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-md text-body-md transition-all flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">corporate_fare</span>
+      Dados do Escritório &amp; Faturamento
+    </button>
+</div>
+<!-- Bento Section 1: WAHA Server & Live Connection Telemetry -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-8">
+<!-- Active Connection Card (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-xl p-5 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-36 h-36 bg-tertiary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-4 relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="p-2 rounded-lg bg-surface-container text-tertiary">
+<span class="material-symbols-outlined text-[22px]">perm_phone_msg</span>
+</span>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Gateway Primário</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">Instância Conectada</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-tertiary font-label-md text-label-md font-medium shadow-sm">
+<span class="h-2 w-2 rounded-full bg-tertiary animate-ping"></span>
+            Online
+          </span>
+</div>
+<!-- Telemetry Data Grid -->
+<div class="grid grid-cols-2 gap-2.5 pt-2">
+<div class="p-3 rounded-lg bg-surface-container-lowest flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline">ID Sessão</span>
+<span class="font-label-md text-label-md text-primary font-mono truncate">waha_lex_cobranca</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-lowest flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline">Número WhatsApp</span>
+<span class="font-label-md text-label-md text-on-surface font-mono">+55 11 98844-2200</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-lowest flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline">Engine Build</span>
+<span class="font-label-md text-label-md text-on-surface font-mono">Waha Plus v2024.9</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-lowest flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline">Latência Webhook</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">bolt</span>
+<span class="font-label-md text-label-md text-tertiary font-mono font-semibold">42 ms</span>
+</div>
+</div>
+</div>
+<!-- SVG Mini Traffic Sparkline -->
+<div class="p-3 rounded-lg bg-surface-container-lowest flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Disparos Últimas 24h</span>
+<span class="font-label-sm text-label-sm text-tertiary font-mono">1.284 entregues</span>
+</div>
+<svg class="w-full h-9 text-tertiary overflow-visible" fill="none" viewbox="0 0 200 30">
+<path d="M0,24 Q20,18 40,22 T80,12 T120,16 T160,6 T200,10" stroke="currentColor" stroke-linecap="round" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0,24 Q20,18 40,22 T80,12 T120,16 T160,6 T200,10 L200,30 L0,30 Z" fill="currentColor" fill-opacity="0.1"></path>
+</svg>
+</div>
+</div>
+<!-- Instance Bottom Triggers -->
+<div class="flex items-center gap-2 pt-4">
+<button class="flex-1 py-2 px-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">restart_alt</span>
+          Reiniciar Sessão
+        </button>
+<button class="py-2 px-2.5 rounded-lg bg-error-container/40 text-error hover:bg-error-container text-center font-label-md text-label-md transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">power_settings_new</span>
+          Desconectar
+        </button>
+</div>
+</div>
+<!-- Credentials & Endpoint Setup (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">dns</span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Parâmetros de Conexão HTTP API</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-mono">TLS 1.3 / mTLS</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Server URL Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center justify-between">
+<span>URL do Servidor WAHA Dedicado</span>
+<span class="text-outline font-label-sm text-label-sm">Porta Padrão: 3000 / 443</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">cloud</span>
+<input class="w-full bg-surface-container-lowest pl-10 pr-24 py-2.5 rounded-lg font-mono text-label-md text-on-surface focus:outline-none focus:bg-surface-container transition-all" type="text" value="https://waha.meuescritorio.adv.br"/>
+<span class="absolute right-2 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-tertiary">200 OK</span>
+</div>
+</div>
+<!-- API Key Token Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center justify-between">
+<span>Chave de API (Secret Token Waha)</span>
+<span class="text-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified_user</span> Bearer Autenticado
+              </span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">key</span>
+<input class="w-full bg-surface-container-lowest pl-10 pr-20 py-2.5 rounded-lg font-mono text-label-md text-on-surface focus:outline-none focus:bg-surface-container transition-all" id="waha-token-input" type="password" value="wh_sec_prod_9948ab823091cdae004812f"/>
+<div class="absolute right-1.5 flex items-center gap-1">
+<button class="p-1 rounded text-outline hover:text-on-surface" onclick="const input = document.getElementById('waha-token-input'); input.type = input.type === 'password' ? 'text' : 'password';" title="Alternar visualização" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-primary" title="Copiar token" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Webhook Status Hook -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant">Endpoint de Retorno (Webhook URL de Callbacks)</label>
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-lowest font-mono text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] text-tertiary">call_split</span>
+<span class="truncate">https://lexcobranca.adv.br/api/webhook/waha-status</span>
+<span class="ml-auto px-1.5 py-0.5 rounded bg-surface-container text-tertiary font-label-sm text-label-sm">ACK Ativo</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Test Connection Trigger -->
+<div class="pt-4 flex items-center gap-3">
+<button class="flex-1 py-2.5 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-headline-md text-body-md font-medium transition-all flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+          Disparar Teste de Diagnóstico Waha
+        </button>
+</div>
+</div>
+<!-- Session Fallback QR-Code & Health Box (3 cols) -->
+<div class="lg:col-span-3 bg-surface-container-low rounded-xl p-5 shadow-sm flex flex-col justify-between items-center text-center">
+<div class="w-full flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Fallback QR Code</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary" title="Sessão Ativa: QR em Standby">check_circle</span>
+</div>
+<!-- QR Code Canvas Simulator -->
+<div class="my-3 p-3 bg-surface-container-lowest rounded-xl shadow-inner relative group">
+<!-- Stylized QR Grid with high-contrast dots -->
+<svg class="w-32 h-32 text-on-surface" fill="currentColor" viewbox="0 0 100 100">
+<!-- Top Left Marker -->
+<rect fill="none" height="26" rx="2" stroke="currentColor" stroke-width="4" width="26" x="5" y="5"></rect>
+<rect height="14" rx="1" width="14" x="11" y="11"></rect>
+<!-- Top Right Marker -->
+<rect fill="none" height="26" rx="2" stroke="currentColor" stroke-width="4" width="26" x="69" y="5"></rect>
+<rect height="14" rx="1" width="14" x="75" y="11"></rect>
+<!-- Bottom Left Marker -->
+<rect fill="none" height="26" rx="2" stroke="currentColor" stroke-width="4" width="26" x="5" y="69"></rect>
+<rect height="14" rx="1" width="14" x="11" y="75"></rect>
+<!-- Center & Sparse Bits -->
+<rect height="6" width="8" x="38" y="8"></rect>
+<rect height="8" width="6" x="50" y="8"></rect>
+<rect height="6" width="10" x="38" y="20"></rect>
+<rect height="6" width="6" x="52" y="22"></rect>
+<rect height="10" width="6" x="8" y="38"></rect>
+<rect height="6" width="8" x="20" y="42"></rect>
+<rect fill="#c5a880" height="24" rx="2" width="24" x="38" y="38"></rect>
+<rect fill="#0f131c" height="12" width="12" x="44" y="44"></rect>
+<rect height="6" width="8" x="68" y="40"></rect>
+<rect height="6" width="12" x="80" y="38"></rect>
+<rect height="12" width="6" x="68" y="52"></rect>
+<rect height="14" width="8" x="82" y="50"></rect>
+<rect height="10" width="8" x="38" y="68"></rect>
+<rect height="8" width="12" x="50" y="72"></rect>
+<rect height="6" width="10" x="70" y="72"></rect>
+<rect height="10" width="6" x="84" y="68"></rect>
+<rect height="6" width="20" x="42" y="84"></rect>
+<rect height="10" width="8" x="68" y="82"></rect>
+</svg>
+<div class="absolute inset-0 bg-surface-container-lowest/80 backdrop-blur-[2px] rounded-xl flex flex-col items-center justify-center p-3 opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[28px] text-tertiary mb-1">wifi_tethering</span>
+<span class="font-headline-md text-label-md font-semibold text-on-surface">Sessão Autenticada</span>
+<span class="font-label-sm text-label-sm text-outline mt-0.5">Renovação automática</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<span class="font-label-sm text-label-sm text-outline">Precisa reconectar novo aparelho?</span>
+<button class="w-full py-1.5 px-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">
+          Gerar Novo QR Code
+        </button>
+</div>
+</div>
+</div>
+<!-- Bento Section 2: Automated D-X Collection Sequence Engine -->
+<div class="bg-surface-container-low rounded-xl p-6 shadow-sm mb-8" id="regua-secao">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-6 gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="p-1.5 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[20px]">linear_scale</span>
+</span>
+<h2 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface">Régua Automática de Vencimento &amp; Cobrança Jurídica</h2>
+</div>
+<p class="font-body-md text-body-md text-outline">Substituição integral de planilhas manuais: parametrize o timing dos disparos via WhatsApp oficial com rastreabilidade total.</p>
+</div>
+<!-- Global Business Rules for Send Schedule -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Horário Padrão:</span>
+<input class="bg-transparent font-mono text-label-md text-primary font-semibold focus:outline-none" type="time" value="09:00"/>
+</div>
+<label class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-lowest cursor-pointer select-none">
+<input checked="" class="rounded bg-surface-variant text-primary focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pular finais de semana &amp; feriados jurídicos</span>
+</label>
+</div>
+</div>
+<!-- Timeline Rules Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 relative">
+<!-- Step 1: D-5 -->
+<div class="bg-surface-container rounded-xl p-4.5 flex flex-col justify-between relative group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-md text-label-md font-mono font-bold tracking-wide">
+              ETAPA 01 // D-5
+            </span>
+<!-- Toggle Component -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface">Lembrete Amigável de Honorários</h3>
+<span class="font-label-sm text-label-sm text-outline">5 dias antes do vencimento</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Notificação cortês contendo dados prévios da fatura, chave PIX Copia &amp; Cola e linha digitável do boleto para planejamento financeiro.
+          </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-outline">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">qr_code_scanner</span>
+<span>PIX Dinâmico + Boleto</span>
+</div>
+<span class="font-label-sm text-label-sm font-mono text-primary font-semibold">09:15 BRT</span>
+</div>
+</div>
+<!-- Step 2: D-0 -->
+<div class="bg-surface-container rounded-xl p-4.5 flex flex-col justify-between relative group hover:bg-surface-container-high transition-all shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-md text-label-md font-mono font-bold tracking-wide">
+              ETAPA 02 // D-0
+            </span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface">Vencimento Hoje (Crítico)</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Dia da liquidação contratual</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Mensagem formal matutina alertando sobre a data de liquidação, com link direto de visualização de 2ª via sem necessidade de login.
+          </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-outline">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">link</span>
+<span>Link Seguro 2ª Via</span>
+</div>
+<span class="font-label-sm text-label-sm font-mono text-primary font-semibold">09:00 BRT</span>
+</div>
+</div>
+<!-- Step 3: D+3 -->
+<div class="bg-surface-container rounded-xl p-4.5 flex flex-col justify-between relative group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-error font-label-md text-label-md font-mono font-bold tracking-wide">
+              ETAPA 03 // D+3
+            </span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface">Pendência Financeira</h3>
+<span class="font-label-sm text-label-sm text-error">3 dias de atraso verificado</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Notificação cordial de ausência de compensação bancária e solicitação de envio de comprovante à controladoria do escritório.
+          </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-outline">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-error">contact_support</span>
+<span>Canal Controladoria</span>
+</div>
+<span class="font-label-sm text-label-sm font-mono text-primary font-semibold">10:30 BRT</span>
+</div>
+</div>
+<!-- Step 4: D+10 -->
+<div class="bg-surface-container rounded-xl p-4.5 flex flex-col justify-between relative group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-error-container text-error font-label-md text-label-md font-mono font-bold tracking-wide">
+              ETAPA 04 // D+10
+            </span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface">Notificação Extrajudicial</h3>
+<span class="font-label-sm text-label-sm text-error font-medium">10 dias de inadimplência</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Alerta preventivo informando o risco iminente de suspensão de atos processuais facultativos e cobrança judicial de honorários.
+          </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-outline">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-error">gavel</span>
+<span>Risco Processual</span>
+</div>
+<span class="font-label-sm text-label-sm font-mono text-primary font-semibold">14:00 BRT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Section 3: WhatsApp Interactive Template Editor & Live Chat Bubble Simulator -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-8" id="templates-secao">
+<!-- Editor Column (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="p-1.5 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</span>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface">Editor de Modelos Oficiais WhatsApp</h3>
+</div>
+<select class="bg-surface-container-lowest text-on-surface font-label-md text-label-md px-3 py-1.5 rounded-lg focus:outline-none">
+<option>Modelo Ativo: D-0 (No Dia do Vencimento)</option>
+<option>Modelo: D-5 (Lembrete Amigável)</option>
+<option>Modelo: D+3 (Pendência Financeira)</option>
+<option>Modelo: D+10 (Aviso Extrajudicial)</option>
+</select>
+</div>
+<!-- Dynamic Variables Pill Bag -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Variáveis Dinâmicas Disponíveis (clique para inserir no cursor):</span>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-mono text-label-sm transition-all" onclick="insertTag('{{nome_cliente}}')" type="button">
+              {{nome_cliente}}
+            </button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-mono text-label-sm transition-all" onclick="insertTag('{{numero_processo}}')" type="button">
+              {{numero_processo}}
+            </button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-mono text-label-sm transition-all" onclick="insertTag('{{valor_cobranca}}')" type="button">
+              {{valor_cobranca}}
+            </button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-mono text-label-sm transition-all" onclick="insertTag('{{data_vencimento}}')" type="button">
+              {{data_vencimento}}
+            </button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-mono text-label-sm transition-all" onclick="insertTag('{{chave_pix}}')" type="button">
+              {{chave_pix}}
+            </button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-mono text-label-sm transition-all" onclick="insertTag('{{link_boleto}}')" type="button">
+              {{link_boleto}}
+            </button>
+</div>
+</div>
+<!-- Message Body Textarea -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center justify-between">
+<span>Corpo da Mensagem (Suporta formatação padrão *negrito*, _itálico_ e quebras)</span>
+<span class="font-mono text-label-sm text-outline" id="char-count">432 caracteres</span>
+</label>
+<textarea class="w-full bg-surface-container-lowest p-4 rounded-xl font-body-md text-body-md text-on-surface leading-relaxed focus:outline-none focus:bg-surface-container transition-all resize-none" id="template-editor" rows="9">Prezado(a) *{{nome_cliente}}*, esperamos que este contato o encontre bem.
+
+Informamos que a fatura referente aos honorários advocatícios do processo nº *{{numero_processo}}* vence na data de hoje (*{{data_vencimento}}*), no montante de *{{valor_cobranca}}*.
+
+Para sua comodidade, o pagamento pode ser efetuado via PIX Copia e Cola:
+`{{chave_pix}}`
+
+Ou consulte a segunda via detalhada do documento fiscal em:
+{{link_boleto}}
+
+Atenciosamente,
+*Controladoria Financeira - Menezes &amp; Associados Advocacia*</textarea>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">check</span>
+          Compatível com Política Anti-Spam Waha
+        </span>
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+          Atualizar Prévia
+        </button>
+</div>
+</div>
+<!-- Live WhatsApp Phone Viewport Simulator (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">smartphone</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">Simulador em Tempo Real</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-mono">Render WAHA</span>
+</div>
+<!-- Smartphone Frame -->
+<div class="w-full bg-[#0b141a] rounded-2xl p-4 shadow-2xl relative flex flex-col justify-between min-h-[420px] overflow-hidden">
+<!-- WhatsApp Header Bar -->
+<div class="flex items-center gap-3 pb-3 mb-2 bg-[#1f2c34] -mx-4 -mt-4 px-4 pt-3.5 shadow-sm">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Official law firm crest avatar in gold and navy colors, photorealistic macro badge with refined typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfuDAvwPPRL-DIwknxkVzUd0OkATeSPURSu6ujPlUQcpKgHt3OqYNBwmvo4HYe2DmGUIK3GkxlFm7zrWHhHdDHmVu6T8Y-_N0biEhOh71RkE5jZlD9TIrSGnn6CGcLYQrpMBx754PzyIZ6JnP8RZZnR0LHCBv4yGJ6tM_P055r3omAEG4D-2AtS5GTtMgu1wGOy523H0kGsk2znUnkJVLtVOO-KegV8XLfYWQ5SdJZkw_J1DNRNKRI"/>
+<span class="absolute bottom-0 right-0 h-2.5 w-2.5 bg-tertiary rounded-full"></span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Menezes &amp; Associados</span>
+<span class="material-symbols-outlined text-tertiary text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Conta Comercial Oficial</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</div>
+</div>
+<!-- Simulated WhatsApp Message Bubble -->
+<div class="flex flex-col gap-2 my-auto">
+<!-- Timestamp Pill -->
+<div class="self-center px-3 py-0.5 rounded-md bg-[#182229] text-outline font-label-sm text-label-sm shadow-sm">
+            HOJE
+          </div>
+<!-- Outbound Message Bubble (WAHA Green Accent) -->
+<div class="self-end max-w-[92%] bg-[#005c4b] text-[#e9edef] rounded-lg rounded-tr-none p-3 shadow-md relative">
+<p class="font-body-sm text-body-sm leading-relaxed whitespace-pre-wrap" id="whatsapp-preview-text">Prezado(a) *Dra. Helena Silveira*, esperamos que este contato o encontre bem.
+
+Informamos que a fatura referente aos honorários advocatícios do processo nº *5001294-82.2023.8.26.0100* vence na data de hoje (*25/10/2024*), no montante de *R$ 4.850,00*.
+
+Para sua comodidade, o pagamento pode ser efetuado via PIX Copia e Cola:
+`00020126580014br.gov.bcb.pix0136lexcobranca-sp`
+
+Ou consulte a segunda via detalhada do documento fiscal em:
+https://fatura.lexcobranca.adv.br/doc/inv_904421
+
+Atenciosamente,
+*Controladoria Financeira - Menezes &amp; Associados Advocacia*</p>
+<!-- Delivery Checks & Time -->
+<div class="flex items-center justify-end gap-1 mt-1.5 text-right">
+<span class="font-label-sm text-label-sm text-outline font-mono">09:00</span>
+<span class="material-symbols-outlined text-[15px] text-[#53bdeb]">done_all</span>
+</div>
+</div>
+</div>
+<!-- Simulated Chat Input Bar -->
+<div class="flex items-center gap-2 pt-2 -mx-2 -mb-2 text-outline">
+<div class="flex-1 bg-[#2a3942] rounded-full px-3 py-1.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">mood</span>
+<span class="font-body-sm text-body-sm text-outline">Mensagem gerada via Waha</span>
+<span class="material-symbols-outlined text-[18px] ml-auto">attach_file</span>
+</div>
+<div class="h-8 w-8 rounded-full bg-[#00a884] flex items-center justify-center text-surface-container-lowest">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</div>
+</div>
+</div>
+<!-- Quick Delivery Verification Metadata -->
+<div class="pt-3 flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm font-mono">ID Payload: msg_01JBC99X218</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[12px]">done_all</span> Leitura confirmada pelo cliente
+        </span>
+</div>
+</div>
+</div>
+<!-- Bottom Global Actions Bar (High Impact Sticky Dock) -->
+<div class="w-full bg-surface-container-low rounded-xl p-4 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[20px]">security_update_good</span>
+</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Configurações Sincronizadas no Cluster</span>
+<span class="font-label-sm text-label-sm text-outline block">Última alteração efetuada por Dr. Rodrigo Menezes há 14 minutos</span>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all font-headline-md text-body-md font-medium" type="button">
+        Cancelar
+      </button>
+<button class="flex-1 sm:flex-none px-6 py-2.5 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary transition-all font-headline-md text-body-md font-semibold shadow-[0_0_16px_rgba(197,168,128,0.25)] flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+        Salvar Alterações
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function insertTag(tag) {
+    const textarea = document.getElementById('template-editor');
+    if (!textarea) return;
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const text = textarea.value;
+    textarea.value = text.substring(0, start) + tag + text.substring(end);
+    textarea.focus();
+    textarea.selectionStart = textarea.selectionEnd = start + tag.length;
+    updateCounterAndPreview();
+  }
+
+  function updateCounterAndPreview() {
+    const textarea = document.getElementById('template-editor');
+    const counter = document.getElementById('char-count');
+    const preview = document.getElementById('whatsapp-preview-text');
+    if (!textarea) return;
+
+    if (counter) {
+      counter.innerText = textarea.value.length + ' caracteres';
+    }
+
+    if (preview) {
+      // Replace tags with sample data for high-fidelity live preview
+      let formatted = textarea.value
+        .replace(/{{nome_cliente}}/g, 'Dra. Helena Silveira')
+        .replace(/{{numero_processo}}/g, '5001294-82.2023.8.26.0100')
+        .replace(/{{valor_cobranca}}/g, 'R$ 4.850,00')
+        .replace(/{{data_vencimento}}/g, '25/10/2024')
+        .replace(/{{chave_pix}}/g, '00020126580014br.gov.bcb.pix0136lexcobranca-sp')
+        .replace(/{{link_boleto}}/g, 'https://fatura.lexcobranca.adv.br/doc/inv_904421');
+      preview.innerText = formatted;
+    }
+  }
+
+  const editor = document.getElementById('template-editor');
+  if (editor) {
+    editor.addEventListener('input', updateCounterAndPreview);
+  }
+</script></main></div></body></html>
