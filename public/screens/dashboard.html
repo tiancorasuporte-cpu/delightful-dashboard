@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#513d1d", "surface-container-lowest": "#0a0e16", "background": "#0f131c", "tertiary-fixed-dim": "#3de273", "surface-dim": "#0f131c", "primary-container": "#c5a880", "on-secondary-fixed": "#111c2d", "tertiary-container": "#00c75c", "on-error-container": "#ffdad6", "surface-variant": "#31353e", "surface-bright": "#353942", "on-primary-fixed": "#281800", "on-background": "#dfe2ee", "primary": "#e2c399", "inverse-primary": "#725b38", "primary-fixed": "#fedeb2", "on-surface": "#dfe2ee", "inverse-on-surface": "#2c3039", "secondary-container": "#3e495d", "on-tertiary-fixed": "#002109", "surface-tint": "#e0c298", "tertiary-fixed": "#66ff8e", "on-secondary-fixed-variant": "#3c475a", "on-error": "#690005", "surface-container-high": "#262a33", "tertiary": "#3fe474", "primary-fixed-dim": "#e0c298", "on-tertiary": "#003915", "on-secondary-container": "#aeb9d0", "on-tertiary-container": "#004c1e", "error-container": "#93000a", "secondary-fixed-dim": "#bcc7de", "on-primary": "#402d0f", "inverse-surface": "#dfe2ee", "surface-container": "#1c2028", "surface-container-low": "#181c24", "on-secondary": "#263143", "surface": "#0f131c", "surface-container-highest": "#31353e", "outline": "#998f83", "on-tertiary-fixed-variant": "#005322", "secondary": "#bcc7de", "error": "#ffb4ab", "secondary-fixed": "#d8e3fb", "on-primary-fixed-variant": "#584323", "outline-variant": "#4d463c", "on-surface-variant": "#d1c5b8" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "margin": "2rem", "space-xs": "0.25rem", "gutter": "1.25rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-lg": [ "JetBrains Mono" ], "headline-xl-mobile": [ "Hanken Grotesk" ], "body-lg": [ "Hanken Grotesk" ], "headline-lg": [ "Hanken Grotesk" ], "label-sm": [ "JetBrains Mono" ], "label-md": [ "JetBrains Mono" ], "headline-lg-mobile": [ "Hanken Grotesk" ], "body-sm": [ "Hanken Grotesk" ], "body-md": [ "Hanken Grotesk" ], "headline-md": [ "Hanken Grotesk" ], "headline-xl": [ "Hanken Grotesk" ] }, "fontSize": { "label-lg": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "400" } ], "label-md": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between pt-6 pb-6"><div class="flex flex-col gap-6"><div class="px-6 flex items-center gap-3"><img alt="LexCobranca Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6SMWnN1WGzj3IinIx-D5FwUzz4IIlpH84_xci2XtdEkV-NPPxVaasTXGl28ylcEzRMaH8lbJ39yq_hRz-RLcKwtgZzdd5ne8lPOuC8zzQbSoCpfWUzsJmXpQiy_9ViJF1MyvBjNe36e0LMouCPsaSGmMVAO5K5uTqG7V8Gp6SEX0qYepAx2LwWQul0B54iBDhzHiH155PK0DBF-RwsorN9efctKaRxU5WXKa44DBTVaMTTThJ7oK7"/><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-tight text-primary font-semibold">LexCobranca</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Gestão Jurídica</span></div></div><div class="px-6"><div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wider">WAHA Conectado</span></div></div><nav class="flex flex-col gap-1 px-3" data-active-classes="bg-surface-container-high text-primary font-semibold"><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="painel-de-cobrancas" href="/" target="_top"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-body-md text-body-md">Painel de Cobranças</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="gestao-de-usuarios" href="/usuarios" target="_top"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Gestão de Usuários</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="configuracoes" href="/configuracoes" target="_top"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Configurações</span></a></nav></div><div class="px-4 flex flex-col gap-3"><div class="p-3 rounded-lg bg-surface-container-lowest flex flex-col gap-1.5"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Instância Waha</span><span class="font-label-sm text-label-sm text-tertiary font-medium">Online</span></div><span class="font-label-sm text-label-sm text-on-surface-variant font-mono truncate">v2024.10 // Jurídico-SP</span></div><div class="flex items-center justify-between pt-2 px-2 text-on-surface-variant"><span class="font-label-sm text-label-sm text-outline">LexCobranca v2.4</span><span class="font-label-sm text-label-sm text-outline font-mono">PROD</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex-1 max-w-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-full bg-surface-container-low pl-10 pr-4 py-2 rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container transition-colors" placeholder="Buscar clientes, processos judiciais ou faturas..." type="text"/></div></div><div class="flex items-center gap-4"><button class="p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')" title="Alternar Tema Escuro / Claro" type="button"><span class="material-symbols-outlined text-[20px] dark:hidden">dark_mode</span><span class="material-symbols-outlined text-[20px] hidden dark:inline">light_mode</span></button><button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-md text-body-md font-semibold hover:bg-primary transition-all shadow-[0_0_16px_rgba(197,168,128,0.25)]" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nova Cobrança</span></button><div class="h-6 w-px bg-surface-variant mx-1"></div><div class="flex items-center gap-3 pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATnhNLV7X2YxPCteBPI4k5o7EoEKG72mKza2s9uGWBjBP5HPWoqD1tLO1yXZxT2Y2k3M04kfNJuTUgSpkgVhKF8B5IoiA_8RU_HhLTgmE9W8zrY7B7NycCSrz_21D_yInP2BRbfbtIT2Wt_HEwNib3nxzqzB_6HYL0c5LjfL1AjaLAPWEF84ZEHxUs3t6P3J7aR6b7T5jQ4H8_cMk1C2_YjbGsXRXruztn5hWd-kofh4Rj6-z0WvLT"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Dr. Rodrigo Menezes</span><span class="font-label-sm text-label-sm text-outline leading-tight">Advogado Sócio</span></div></div></div></header><main class="relative pt-16 w-full px-margin"><div class="flex flex-col w-full pb-16">
+<!-- Top Ambient Glow -->
+<div class="relative w-full">
+<div class="absolute -top-10 left-1/4 w-96 h-40 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -top-6 right-1/4 w-80 h-36 bg-tertiary/5 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+<!-- Breadcrumb & Control Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-6 pb-6">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Controladoria Jurídica</span>
+<span class="font-label-sm text-label-sm text-outline-variant">/</span>
+<span class="font-label-sm text-label-sm text-primary font-medium tracking-wide">Fluxo de Honorários Ativo</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-semibold text-on-surface tracking-tight">Painel de Cobranças Jurídicas</h1>
+</div>
+<!-- Quick Toolset Actions -->
+<div class="flex flex-wrap items-center gap-2.5">
+<button class="group flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">upload_file</span>
+<span class="font-body-sm text-body-sm font-medium">Importar Planilha</span>
+</button>
+<button class="group flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">file_download</span>
+<span class="font-body-sm text-body-sm font-medium">Exportar Relatório</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-md text-body-md font-semibold hover:bg-primary transition-all shadow-[0_0_20px_rgba(197,168,128,0.25)]" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Cadastrar Cobrança</span>
+</button>
+</div>
+</div>
+<!-- 1. METRICS & KPI CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+<!-- Card 1: Total a Receber -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-5 shadow-sm transition-all hover:shadow-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-mono">Competência Atual</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Total a Receber no Mês</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">R$ 148.500<span class="text-headline-md font-normal text-outline">,00</span></span>
+</div>
+<div class="mt-3 flex items-center gap-2 font-label-md text-label-md">
+<span class="inline-flex items-center gap-0.5 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+          +12%
+        </span>
+<span class="text-outline">vs. mês anterior (R$ 132.500)</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/30 via-primary to-transparent"></div>
+</div>
+<!-- Card 2: Vencendo Hoje -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-5 shadow-sm transition-all hover:shadow-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider font-mono flex items-center gap-1.5">
+<span class="h-1.5 w-1.5 rounded-full bg-error animate-ping"></span>
+            Atenção Prioritária
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Vencendo Hoje</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">event_upcoming</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">R$ 18.250<span class="text-headline-md font-normal text-outline">,00</span></span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-md text-label-md font-mono">5 títulos</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-label-md font-label-md">
+<span class="text-outline">Waha D-0 agendado: 100%</span>
+<span class="text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 5 disparos prontos
+        </span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-error/40 via-error to-transparent"></div>
+</div>
+<!-- Card 3: Em Atraso / Vencidos -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-5 shadow-sm transition-all hover:shadow-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-mono">Inadimplência</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Em Atraso / Vencidos</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[20px]">warning_amber</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">R$ 32.400<span class="text-headline-md font-normal text-outline">,00</span></span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-error font-label-md text-label-md font-mono">8 títulos</span>
+</div>
+<div class="mt-3 pt-1">
+<button class="w-full flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-tertiary font-label-md text-label-md font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">send_and_archive</span>
+<span>Cobrança Waha em Lote</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-outline/40 via-outline to-transparent"></div>
+</div>
+<!-- Card 4: WhatsApp Waha Automação -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-5 shadow-sm transition-all hover:shadow-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-mono flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+            Automação Waha API
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Disparos (Últimos 7 dias)</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">42 <span class="text-headline-md font-normal text-outline">mensagens</span></span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-tertiary font-label-md text-label-md font-mono">98.4% entrega</span>
+</div>
+<div class="mt-3 flex items-center gap-3 text-label-md font-label-md text-outline">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 38 Lidas</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 3 Entregues</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error"></span> 1 Falha</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-tertiary/40 via-tertiary to-transparent"></div>
+</div>
+</div>
+<!-- 2. ADVANCED FILTERS BAR (SPREADSHEET REPLACEMENT) -->
+<div class="rounded-xl bg-surface-container-low p-4 mb-6 shadow-sm flex flex-col gap-4">
+<!-- Row 1: Search & Filter Selectors -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
+<!-- Search Input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container pl-10 pr-24 py-2.5 rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" placeholder="Buscar por Razão Social, CNPJ/CPF, Nº do Processo Judicial ou ID Fatura..." type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 font-label-sm text-label-sm text-outline bg-surface-container-highest px-2 py-0.5 rounded font-mono">⌘ + K</span>
+</div>
+<!-- Advogado Responsável Filter -->
+<div class="flex items-center gap-2">
+<div class="relative min-w-[210px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">person</span>
+<select class="w-full bg-surface-container pl-9 pr-8 py-2.5 rounded-lg font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-high transition-colors cursor-pointer">
+<option value="">Todos os Advogados</option>
+<option selected="" value="rodrigo">Dr. Rodrigo Menezes</option>
+<option value="camila">Dra. Camila Rocha</option>
+<option value="matheus">Dr. Matheus Silveira</option>
+<option value="renata">Dra. Renata Albuquerque</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Período de Vencimento Filter -->
+<div class="relative min-w-[170px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">calendar_month</span>
+<select class="w-full bg-surface-container pl-9 pr-8 py-2.5 rounded-lg font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-high transition-colors cursor-pointer">
+<option selected="" value="current_month">Outubro / 2024</option>
+<option value="next_month">Novembro / 2024</option>
+<option value="custom">Personalizado...</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+<button class="p-2.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Mais Filtros Jurídicos" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Row 2: Status Pill Tabs -->
+<div class="flex items-center justify-between flex-wrap gap-2 pt-1">
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full">
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold transition-all" type="button">
+          Todos (54)
+        </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-medium transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+          Vencendo Hoje (5)
+        </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-medium transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+          Em Atraso (8)
+        </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-medium transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          A Vencer (32)
+        </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-medium transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+          Recebidos (9)
+        </button>
+</div>
+<div class="flex items-center gap-3 text-label-sm font-label-sm text-outline font-mono">
+<span>Exibindo 6 de 54 registros</span>
+<span class="h-3 w-px bg-surface-variant"></span>
+<button class="hover:text-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Atualizar
+        </button>
+</div>
+</div>
+</div>
+<!-- 3. MAIN SPREADSHEET REPLACEMENT TABLE & SPLIT REAL-TIME WAHA PANEL -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- Table Container (8 Cols on XL) -->
+<div class="xl:col-span-8 flex flex-col gap-4">
+<div class="overflow-hidden rounded-xl bg-surface-container shadow-sm">
+<!-- Table Top Control Bar -->
+<div class="p-4 bg-surface-container-high/60 flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 focus:outline-none cursor-pointer" id="selectAll" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface font-medium cursor-pointer" for="selectAll">
+              Selecionar Visíveis (6)
+            </label>
+<span class="text-outline text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-outline">Valor Selecionado: <strong class="text-primary font-mono font-medium">R$ 0,00</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline font-mono">Ordenação:</span>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1 hover:bg-surface-container-highest">
+<span>Data de Vencimento</span>
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- Real Ledger Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 pl-4 pr-2 w-8"></th>
+<th class="py-3 px-3">Cliente / Razão Social</th>
+<th class="py-3 px-3">Processo / Referência</th>
+<th class="py-3 px-3 text-right">Valor Honorários</th>
+<th class="py-3 px-3">Vencimento</th>
+<th class="py-3 px-3">Status Cobrança</th>
+<th class="py-3 px-3">Automação Waha</th>
+<th class="py-3 pr-4 pl-3 text-center">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-sm font-body-sm text-on-surface">
+<!-- Row 1: Construtora Horizonte (Vencendo Hoje) -->
+<tr class="group hover:bg-surface-container-high transition-colors bg-surface-container/60">
+<td class="py-3.5 pl-4 pr-2">
+<input class="w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 min-w-[200px]">
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Construtora Horizonte Ltda</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">CNPJ: 14.892.401/0001-89</span>
+</div>
+</td>
+<td class="py-3.5 px-3 min-w-[190px]">
+<div class="flex flex-col">
+<span class="font-mono text-label-sm text-on-surface-variant font-medium">0041289-44.2023.8.26.0100</span>
+<span class="text-body-sm text-outline">Recurso Especial Cível</span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-right font-mono font-semibold text-on-surface whitespace-nowrap">
+                  R$ 7.500,00
+                </td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-error font-semibold">Hoje (18/10)</span>
+<span class="font-label-sm text-label-sm text-error">Vence em 4 horas</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-highest text-error font-label-sm text-label-sm font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    Vencendo Hoje
+                  </span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">mark_chat_read</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Lembrete D-0 Pronto</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Disparo: 11:30</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 pr-4 pl-3 whitespace-nowrap">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-tertiary transition-colors" title="Disparar Notificação Waha Agora" type="button">
+<span class="material-symbols-outlined text-[17px]">send</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-primary transition-colors" title="Histórico de Mensagens" type="button">
+<span class="material-symbols-outlined text-[17px]">history</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-tertiary transition-colors" title="Liquidar Título / Pago" type="button">
+<span class="material-symbols-outlined text-[17px]">check</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Indústria MetalSul S.A. (Em Atraso) -->
+<tr class="group hover:bg-surface-container-high transition-colors bg-surface-container">
+<td class="py-3.5 pl-4 pr-2">
+<input class="w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Indústria MetalSul S.A.</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">CNPJ: 03.119.822/0001-04</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-mono text-label-sm text-on-surface-variant font-medium">Contrato #2024-MS08</span>
+<span class="text-body-sm text-outline">Assessoria Jurídica Mensal</span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-right font-mono font-semibold text-on-surface whitespace-nowrap">
+                  R$ 12.800,00
+                </td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-outline font-medium">10/10/2024</span>
+<span class="font-label-sm text-label-sm text-error font-semibold">8 dias em atraso</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-highest text-error font-label-sm text-label-sm font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    Em Atraso (+8d)
+                  </span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">done_all</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Mensagem Entregue e Lida</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">14/10 às 15:42</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 pr-4 pl-3 whitespace-nowrap">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-tertiary transition-colors" title="Disparar Reaviso Waha" type="button">
+<span class="material-symbols-outlined text-[17px]">send</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-primary transition-colors" title="Histórico de Mensagens" type="button">
+<span class="material-symbols-outlined text-[17px]">history</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-tertiary transition-colors" title="Liquidar Título / Pago" type="button">
+<span class="material-symbols-outlined text-[17px]">check</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Dr. Matheus Silveira (Sucumbenciais) -->
+<tr class="group hover:bg-surface-container-high transition-colors bg-surface-container/60">
+<td class="py-3.5 pl-4 pr-2">
+<input class="w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Dr. Matheus Silveira (Advogado Parceiro)</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">OAB/SP 412.908</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-mono text-label-sm text-on-surface-variant font-medium">1029482-12.2021.8.26.0002</span>
+<span class="text-body-sm text-outline">Honorários Sucumbenciais 15%</span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-right font-mono font-semibold text-on-surface whitespace-nowrap">
+                  R$ 19.600,00
+                </td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-on-surface-variant">25/10/2024</span>
+<span class="font-label-sm text-label-sm text-outline">Em 7 dias</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    A Vencer
+                  </span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Lembrete D-7 Enviado</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">18/10 às 09:00</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 pr-4 pl-3 whitespace-nowrap">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-tertiary transition-colors" title="Disparar Notificação Waha" type="button">
+<span class="material-symbols-outlined text-[17px]">send</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-primary transition-colors" title="Histórico de Mensagens" type="button">
+<span class="material-symbols-outlined text-[17px]">history</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-tertiary transition-colors" title="Liquidar Título / Pago" type="button">
+<span class="material-symbols-outlined text-[17px]">check</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: BioTech Diagnósticos S.A. (Falha de Número) -->
+<tr class="group hover:bg-surface-container-high transition-colors bg-surface-container">
+<td class="py-3.5 pl-4 pr-2">
+<input class="w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">BioTech Diagnósticos Médicos S.A.</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">CNPJ: 22.409.118/0001-33</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-mono text-label-sm text-on-surface-variant font-medium">5019384-90.2022.4.03.6100</span>
+<span class="text-body-sm text-outline">Defesa Regulatória Anvisa</span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-right font-mono font-semibold text-on-surface whitespace-nowrap">
+                  R$ 10.750,00
+                </td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-error font-semibold">Hoje (18/10)</span>
+<span class="font-label-sm text-label-sm text-error">Vencimento iminente</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-highest text-error font-label-sm text-label-sm font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    Vencendo Hoje
+                  </span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-error">sms_failed</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-error font-medium">Falha no Número (Waha)</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Número sem WhatsApp</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 pr-4 pl-3 whitespace-nowrap">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-outline hover:text-on-surface transition-colors" title="Corrigir Telefone do Cliente" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-primary transition-colors" title="Histórico de Mensagens" type="button">
+<span class="material-symbols-outlined text-[17px]">history</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-tertiary transition-colors" title="Liquidar Título / Pago" type="button">
+<span class="material-symbols-outlined text-[17px]">check</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Logística TransContinental (Recebido) -->
+<tr class="group hover:bg-surface-container-high transition-colors bg-surface-container/60 opacity-80 hover:opacity-100">
+<td class="py-3.5 pl-4 pr-2">
+<input class="w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Logística TransContinental Ltda</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">CNPJ: 07.981.332/0002-19</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-mono text-label-sm text-on-surface-variant font-medium">0008492-77.2024.8.26.0011</span>
+<span class="text-body-sm text-outline">Honorários de Êxito (Acordo)</span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-right font-mono font-semibold text-tertiary whitespace-nowrap">
+                  R$ 35.000,00
+                </td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-on-surface-variant">17/10/2024</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Quitado ontem</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Recebido (PIX)
+                  </span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">receipt_long</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Recibo Waha Enviado</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">17/10 às 16:10</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 pr-4 pl-3 whitespace-nowrap">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-primary transition-colors" title="Baixar Comprovante Fiscal" type="button">
+<span class="material-symbols-outlined text-[17px]">description</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-primary transition-colors" title="Histórico de Mensagens" type="button">
+<span class="material-symbols-outlined text-[17px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Grupo Educacional Alfa (Em Atraso 2 dias) -->
+<tr class="group hover:bg-surface-container-high transition-colors bg-surface-container">
+<td class="py-3.5 pl-4 pr-2">
+<input class="w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Grupo Educacional Alfa S/S</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">CNPJ: 61.229.400/0001-92</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-mono text-label-sm text-on-surface-variant font-medium">Contrato Geral #2024-ED</span>
+<span class="text-body-sm text-outline">Consultoria Trabalhista Preventiva</span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-right font-mono font-semibold text-on-surface whitespace-nowrap">
+                  R$ 8.900,00
+                </td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-outline font-medium">16/10/2024</span>
+<span class="font-label-sm text-label-sm text-error font-medium">2 dias em atraso</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-highest text-error font-label-sm text-label-sm font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    Em Atraso (+2d)
+                  </span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">forward_to_inbox</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Reaviso D+2 Disparado</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Hoje às 08:30</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 pr-4 pl-3 whitespace-nowrap">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-tertiary transition-colors" title="Disparar Cobrança Waha" type="button">
+<span class="material-symbols-outlined text-[17px]">send</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-primary transition-colors" title="Histórico de Mensagens" type="button">
+<span class="material-symbols-outlined text-[17px]">history</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface-variant hover:text-tertiary transition-colors" title="Liquidar Título / Pago" type="button">
+<span class="material-symbols-outlined text-[17px]">check</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Footer -->
+<div class="p-4 bg-surface-container-high/60 flex items-center justify-between flex-wrap gap-4">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Linhas por página:</span>
+<select class="bg-surface-container px-2 py-1 rounded font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer">
+<option value="10">10</option>
+<option selected="" value="25">25</option>
+<option value="50">50</option>
+<option value="100">100</option>
+</select>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-outline font-mono">Página 1 de 3</span>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded bg-surface-container text-outline hover:text-on-surface transition-colors disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Batch Action Bar (Sticky dock hint when selected) -->
+<div class="rounded-xl bg-surface-container-low p-4 flex items-center justify-between flex-wrap gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Ações em Lote Disponíveis</span>
+<span class="font-label-sm text-label-sm text-outline">Selecione títulos na tabela para executar ações simultâneas via API Waha</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant text-label-md font-label-md transition-colors" type="button">
+            Gerar Boletos em PDF
+          </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-tertiary text-label-md font-label-md font-medium transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">schedule_send</span>
+            Disparar Cobrança Selecionados
+          </button>
+</div>
+</div>
+</div>
+<!-- 4. REAL-TIME WAHA MESSAGE QUEUE & PREVIEW (4 Cols on XL) -->
+<div class="xl:col-span-4 flex flex-col gap-4">
+<!-- Waha Queue Card -->
+<div class="rounded-xl bg-surface-container p-5 shadow-sm flex flex-col gap-4">
+<!-- Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Fila Waha em Tempo Real</h2>
+<span class="font-label-sm text-label-sm text-outline font-mono">Webhook: Online // 0 ms latency</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-mono">
+            3 na fila
+          </span>
+</div>
+<!-- Template Preview Box -->
+<div class="p-3.5 rounded-lg bg-surface-container-lowest flex flex-col gap-2.5 shadow-inner">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+              Template Padrão: Vencimento D-0
+            </span>
+<span class="font-label-sm text-label-sm text-outline font-mono">ID: #TMP-VENC-HOJE</span>
+</div>
+<!-- Mock WhatsApp Balloon -->
+<div class="p-3 rounded-lg bg-surface-container-high/90 text-on-surface flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span class="font-semibold text-primary">LexCobranca Jurídico</span>
+<span class="font-mono">11:15</span>
+</div>
+<p class="font-body-sm text-body-sm leading-relaxed text-on-surface-variant">
+              "Prezado(a) <strong class="text-on-surface">Construtora Horizonte</strong>, informamos que a fatura referente aos <strong class="text-on-surface">Honorários Advocatícios</strong> (Processo nº 0041289-44.2023.8.26.0100) no valor de <strong class="text-primary">R$ 7.500,00</strong> vence no dia de hoje. Segue a chave PIX Copia e Cola para liquidação facilitada: <code class="text-label-sm font-mono bg-surface-container-lowest px-1 py-0.5 rounded text-outline-variant">pix.lexjuridico.com.br/...</code>"
+            </p>
+<div class="flex items-center justify-end gap-1 text-label-sm font-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+<span>Visualização Prévia</span>
+</div>
+</div>
+</div>
+<!-- Dispatch Queue Item List -->
+<div class="flex flex-col gap-2.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-mono">Próximos Disparos Automáticos</span>
+<!-- Queue Item 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-start justify-between gap-3 hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">schedule</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Construtora Horizonte Ltda</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">+55 (11) 98711-2090</span>
+<span class="font-label-sm text-label-sm text-outline-variant mt-1">Disparo em 15 minutos (11:30)</span>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-error transition-colors" title="Pausar Disparo">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+</button>
+</div>
+<!-- Queue Item 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-start justify-between gap-3 hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">schedule</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Agropecuária Rio Doce S/A</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">+55 (19) 99124-0019</span>
+<span class="font-label-sm text-label-sm text-outline-variant mt-1">Disparo às 12:00 (Lembrete D-0)</span>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-error transition-colors" title="Pausar Disparo">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+</button>
+</div>
+<!-- Queue Item 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-start justify-between gap-3 hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">schedule</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Engenharia Santos &amp; Cia</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">+55 (13) 98100-3344</span>
+<span class="font-label-sm text-label-sm text-outline-variant mt-1">Disparo às 14:00 (Reaviso D+3)</span>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-error transition-colors" title="Pausar Disparo">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+</button>
+</div>
+</div>
+<!-- Telemetry & Webhook Status -->
+<div class="pt-2 flex items-center justify-between text-label-sm font-label-sm text-outline font-mono">
+<div class="flex items-center gap-1.5">
+<span class="h-2 w-2 rounded-full bg-tertiary animate-pulse"></span>
+<span>Waha Session: JURIDICO-SP</span>
+</div>
+<span class="hover:text-primary cursor-pointer transition-colors">Ver Logs Completos →</span>
+</div>
+</div>
+<!-- Quick Tips Card: Spreadsheet Migration Benefit -->
+<div class="rounded-xl bg-surface-container p-4 shadow-sm flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Rotina Sem Planilhas Manuais</span>
+<p class="font-body-sm text-body-sm text-outline leading-snug">
+            O LexCobranca sincroniza diretamente com a instância do WhatsApp Waha e conciliação bancária via PIX, eliminando a digitação repetitiva de cobranças.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

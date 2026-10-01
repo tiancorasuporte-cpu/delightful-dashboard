@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Preserve the supplied LexCobranca reference screens as self-contained public HTML and expose them through thin TanStack routes, because the source HTML is the visual specification.
